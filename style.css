@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+
+.txt-hide {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.sold-out::after {
+  content: ' ';
+  width: 94px;
+  height: 130px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(./img/Sold-out.png) no-repeat center;
+  background-size: 57.51px 44.85px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+:root {
+  --bg-color-lightblue: #eae8fe;
+  --point-color-blue: #6327fe;
+  --border-color-gray: #bdbdbd;
+  --txt-color-black: #333333;
+}
+
+body {
+  min-width: 750px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  background-color: var(--bg-color-lightblue);
+}
+
+.header h1 {
+  width: 386px;
+  margin: 0 auto;
+}
+
+h1 .img-logo {
+  width: 100%;
+}
+
+.contents {
+  display: flex;
+  gap: 28px;
+  width: fit-content;
+  margin: 67px auto;
+}
+
+/*왼쪽 섹션*/
+
+.section-vending-machine {
+  background-color: white;
+  padding: 31px 27px 28px 27px;
+}
+
+.section-vending-machine button {
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+}
+
+.section-vending-machine .list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.list-item .btn-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 94px;
+  height: 130px;
+  padding-top: 11px;
+  padding-bottom: 9px;
+  border-radius: 10px;
+}
+
+.list-item .btn-item:hover {
+  outline: 3px solid var(--point-color-blue);
+}
+
+.btn-item .img-item {
+  width: 36px;
+  height: 65px;
+}
+
+.list-item .txt-item,
+.list-item-selected .txt-item {
+  font-size: 9px;
+  line-height: 13px;
+  color: var(--txt-color-black);
+}
+
+.list-item .txt-price {
+  text-align: center;
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  line-height: 100%;
+  color: white;
+  background-color: var(--point-color-blue);
+}
+
+.section-vending-machine .payment {
+  display: grid;
+  grid-template-columns: 200px 94px;
+  grid-template-rows: 32px 32px 106px;
+  gap: 12px;
+}
+
+.payment > * {
+  border-radius: 5px;
+}
+
+.payment .cont-balance {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: var(--bg-color-lightblue);
+}
+
+.payment .inp-add {
+  font-size: 13px;
+  line-height: 19px;
+  border: 1px solid var(--border-color-gray);
+  padding-left: 5px;
+}
+
+.payment .inp-add::placeholder {
+  color: #bdbdbd;
+}
+
+.payment .inp-add:focus {
+  outline: none;
+  border: 1px solid var(--point-color-blue);
+}
+
+.payment .btn-return,
+.payment .btn-add,
+.payment .btn-get {
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.payment .btn-get {
+  font-weight: 700;
+  color: white;
+  background-color: var(--point-color-blue);
+}
+
+.list-item-selected {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 12px 6px 12px 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  background-color: var(--bg-color-lightblue);
+}
+
+.list-item-selected::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list-item-selected::-webkit-scrollbar-thumb {
+  height: 30%;
+  background-color: white;
+  border-radius: 50px;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+}
+.list-item-selected::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-item-selected li {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px 7px 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.list-item-selected li + li {
+  margin-top: 6px;
+}
+
+.list-item-selected .img-item-selected {
+  width: 18px;
+  height: 33px;
+  margin-right: 10px;
+}
+
+.list-item-selected .txt-count {
+  margin-left: auto;
+  padding: 3px 10px 5px 10px;
+  border: 1px solid var(--border-color-gray);
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/*오른쪽 섹션*/
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-right .section-my-money {
+  padding: 9px 27px;
+  background-color: white;
+}
+
+.section-my-money .cont-txt-money {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: var(--bg-color-lightblue);
+}
+
+.cont-txt-money .txt-money {
+  font-weight: 700;
+}
+
+.container-right .section-my-item {
+  text-align: center;
+  min-width: 360px;
+  padding: 25px 27px 29px 27px;
+  background-color: white;
+}
+.section-my-item h2 {
+  margin-bottom: 13px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.section-my-item .list-item-selected {
+  height: 364px;
+}
+
+.section-my-item .cont-total {
+  display: flex;
+  float: right;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.cont-total .txt-total {
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    min-width: 360px;
+    background-color: white;
+  }
+  .header h1 {
+    width: 166px;
+  }
+  .contents {
+    flex-direction: column;
+    margin: 0;
+    gap: 0px;
+  }
+  .section-vending-machine,
+  .section-my-money,
+  .section-my-item {
+    padding: 0 27px;
+  }
+
+  .section-vending-machine {
+    margin-top: 18px;
+  }
+  .section-my-money {
+    margin-top: 20px;
+  }
+  .section-my-item {
+    margin: 41px 0;
+  }
+}
